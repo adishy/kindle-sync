@@ -1,14 +1,81 @@
 <html>
   <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
+  <style>
+    .syncInputContainer {
+      max-width: 38rem;
+      padding: 2rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+      clear: both;
+    }
+
+    .syncInputContainer input[type=text]{
+      padding: 5px;
+      width: 100%;
+      clear: both;
+    }
+
+    #syncButton {
+      display: block;
+      margin: auto;
+    }
+  </style>
+
   <body>
+    <div class="syncInputContainer">
+      <form>
+        <label>Server Address</label>
+        <input type="text"
+              id="serverUrl"
+              placeholder="Enter server address" 
+              value="http://raspberry.pi.zero:8000/test"/>
+
+        <br>
+        <br>
+
+        <label>File URL</label>
+        <input type="text"
+              id="fileUrl"
+              placeholder="Enter highlights file url" 
+              value="file:///mnt/u/Documents/My Clippings.txt"/>
+
+        <br>
+        <br>
+
+        <input type="button" id="syncButton" value="Sync Now!"/>
+       </form>
+    </div>
   </body>
 
   <script>
-    var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-    var url = "http://localhost:8000/test";
-    xmlhttp.open("POST", url);
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xmlhttp.send(JSON.stringify({ "hello": "there" }));
+    var syncButton = document.getElementById("syncButton");
+    
+    syncButton.addEventListener("click", getHighlights);
+
+    function getHighlights() {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) startSync(xmlhttp.responseText);
+      }
+      var url = document.getElementById("fileUrl").value;
+      xmlhttp.open("GET", url);
+      xmlhttp.send();
+    }
+
+    function startSync(content) {
+      var xmlhttp = new XMLHttpRequest();
+      var url = document.getElementById("serverUrl").value;
+      xmlhttp.open("POST", url);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      // Might *eventually* run into POST body limit if the file is big
+      // enough, but we can delete the "My Clippings" file
+      // periodically, after we save it.
+      xmlhttp.send(JSON.stringify({ "content": content }));
+    }
   </script>
 </html>
