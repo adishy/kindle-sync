@@ -1,0 +1,14 @@
+<html>
+  <head>
+  </head>
+  <body>
+  </body>
+
+  <script>
+    var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+    var url = "http://localhost:8000/test";
+    xmlhttp.open("POST", url);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send(JSON.stringify({ "hello": "there" }));
+  </script>
+</html>
