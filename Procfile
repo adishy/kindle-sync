@@ -1,1 +1,1 @@
-web: python sendgrid/helpers/inbound/app.py
+web: python app.py
