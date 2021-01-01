@@ -41,7 +41,7 @@ def inbound_parse():
             for attachment in parse.attachments():
                 try:
                     print(attachment)
-                    message_bytes = base64.b64decode(base64_bytes)
+                    message_bytes = base64.b64decode(attachment["contents"])
                     message = message_bytes.decode('ascii')
                     print("Content", message)
                 except Exception as e:
