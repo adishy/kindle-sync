@@ -1,6 +1,7 @@
 from kindle_sync import app
+from flask import request, jsonify
 
-@app.route('/email/', methods = [ 'POST' ])
+@app.route('/api/email/', methods = [ 'POST' ])
 def test():
     print("Email!")
 
