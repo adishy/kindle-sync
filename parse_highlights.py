@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import pprint
 import sys
 
-def parse_notebook(notebook_data):
+def parse_highlights(notebook_data):
     notebook_details = \
     {
         "title": "",

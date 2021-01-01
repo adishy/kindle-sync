@@ -1,0 +1,1 @@
+from kindle_sync.views import index

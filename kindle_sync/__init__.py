@@ -4,5 +4,5 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-from kindle-sync.api import *
-from kindle-sync.views import *
+from kindle_sync.api import *
+from kindle_sync.views import *
