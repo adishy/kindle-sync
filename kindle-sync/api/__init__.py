@@ -1,0 +1,1 @@
+from kindle-sync.api import email

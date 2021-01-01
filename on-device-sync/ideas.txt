@@ -1,0 +1,6 @@
+* Embed an iframe and attempt to read the contents, POST that to an external server [ DOES NOT WORK - CORS policy, probably - browser says an error occured ]
+* Perform an XMLHttpRequest to file:///mnt/u/documents/My Clippings.txt and read the contents [ DOES NOT WORK - CORS policy, probably ]
+* Prepend HTML/Javascript in My Clippings.txt and wrap the highlights in an element, read the contents of that element in JS a nd POST that to an external server
+    * Does not work "directly" - the browser interprets ".txt" files as text/plain regardless of the content
+    * Might be able to symlink highlights.html as "My Clippings.txt", the highlights would be appended to this file and the browser would be able to read the file as HTML and run the script as well
+        * userstore is FAT32, does not support symlinks - perhaps try manually editing inodes? 
