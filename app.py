@@ -1,6 +1,8 @@
 """Receiver module for processing SendGrid Inbound Parse messages.
 
 See README.txt for usage instructions."""
+import base64
+
 try:
     from config import Config
 except:
@@ -31,7 +33,23 @@ def inbound_parse():
     """Process POST from Inbound Parse and print received data."""
     parse = Parse(config, request)
     # Sample processing action
+    print("Email!")
     print(parse.key_values())
+    attachments = parse.attachments()
+    if attachments is not None:
+        try:
+            for attachment in parse.attachments():
+                try:
+                    print(attachment)
+                    message_bytes = base64.b64decode(base64_bytes)
+                    message = message_bytes.decode('ascii')
+                    print("Content", message)
+                except Exception as e:
+                    print(e)
+                    print("Could not decode")
+        except Exception as e:
+            print(e)
+            print("Error!")
     # Tell SendGrid's Inbound Parse to stop sending POSTs
     # Everything is 200 OK :)
     return "OK"
