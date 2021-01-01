@@ -34,7 +34,8 @@ def inbound_parse():
     parse = Parse(config, request)
     # Sample processing action
     print("Email!")
-    print(parse.key_values())
+    print(parse.get_raw_email())
+    return "OK"
     attachments = parse.attachments()
     if attachments is not None:
         try:
