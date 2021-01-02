@@ -1,8 +1,6 @@
 """Receiver module for processing SendGrid Inbound Parse messages.
 
 See README.txt for usage instructions."""
-import base64
-import mailparser
 
 try:
     from config import Config
@@ -17,6 +15,9 @@ except:
     from sendgrid.helpers.inbound.parse import Parse
 
 from flask import Flask, request, render_template
+from parse_highlights import parse_highlights
+import base64
+import mailparser
 import os
 
 app = Flask(__name__)
@@ -41,7 +42,7 @@ def inbound_parse():
             raw_payload = attached_file["payload"]
             payload_bytes = base64.b64decode(raw_payload)
             html_payload = payload_bytes.decode("utf-8")
-            print(html_payload)
+            print(parse_highlights(html_payload))
         except Exception as e:
             print(e)
             print("Could not process attached file")
