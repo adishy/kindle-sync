@@ -35,7 +35,18 @@ def inbound_parse():
     # Sample processing action
     print("Email!")
     mail = mailparser.parse_from_string(parse.get_raw_email())
-    print("Attachments", mail.attachments)
+    print("Attachments", len(mail.attachments))
+    for attached_file in mail.attachments:
+        if attached_file["mail_content_type"] == "text/html" and attached_file["content-disposition"] == "attachment":
+            try:
+                raw_payload = attached_file["payload"]
+                payload_bytes = base64.b64decode(raw_payload)
+                html_payload = payload_bytes.decode("utf-8")
+                print(html_payload)
+            except Exception as e:
+                print(e)
+                print("Could not process attached file")
+
     return "OK"
 
 if __name__ == '__main__':
