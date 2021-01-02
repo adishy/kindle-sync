@@ -34,25 +34,15 @@ def inbound_parse():
     parse = Parse(config, request)
     # Sample processing action
     print("Email!")
-    print(parse.get_raw_email())
-    return "OK"
-    attachments = parse.attachments()
-    if attachments is not None:
-        try:
-            for attachment in parse.attachments():
-                try:
-                    print(attachment)
-                    message_bytes = base64.b64decode(attachment["contents"])
-                    message = message_bytes.decode('ascii')
-                    print("Content", message)
-                except Exception as e:
-                    print(e)
-                    print("Could not decode")
-        except Exception as e:
-            print(e)
-            print("Error!")
-    # Tell SendGrid's Inbound Parse to stop sending POSTs
-    # Everything is 200 OK :)
+    data = parse.get_raw_email()
+    try:
+        print(data)
+        file = open('test.txt', 'w')
+        file.write(data)
+        file.close()
+    except Exception as e:
+        print("Could not write file")
+
     return "OK"
 
 if __name__ == '__main__':
