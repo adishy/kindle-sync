@@ -2,6 +2,7 @@
 
 See README.txt for usage instructions."""
 import base64
+import mailparser
 
 try:
     from config import Config
@@ -27,18 +28,14 @@ def index():
     """Show index page to confirm that server is running."""
     return render_template('index.html')
 
-@app.route('/show_data', methods=['GET'])
-def show_data():
-    return data
-
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
     """Process POST from Inbound Parse and print received data."""
     parse = Parse(config, request)
     # Sample processing action
     print("Email!")
-    email = parse.get_raw_email()
-    data = email
+    mail = mailparser.parse_from_string(parse.get_raw_email())
+    print("Attachments", mail.attachments)
     return "OK"
 
 if __name__ == '__main__':
