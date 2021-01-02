@@ -32,8 +32,7 @@ class Parse(object):
         https://sendgrid.com/docs/Classroom/Basics/Inbound_Parse_Webhook/setting_up_the_inbound_parse_webhook.html#-Raw-Parameters
         """
         if 'email' in self.payload:
-            raw_email = email.message_from_string(self.payload['email'])
-            return raw_email
+            return self.payload['email']
         else:
             return None
 
