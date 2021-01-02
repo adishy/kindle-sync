@@ -20,13 +20,16 @@ import os
 
 app = Flask(__name__)
 config = Config()
-
+data = "Not yet set"
 
 @app.route('/', methods=['GET'])
 def index():
     """Show index page to confirm that server is running."""
     return render_template('index.html')
 
+@app.route('/show_data', methods=['GET'])
+def show_data():
+    return data
 
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
@@ -34,15 +37,8 @@ def inbound_parse():
     parse = Parse(config, request)
     # Sample processing action
     print("Email!")
-    data = parse.get_raw_email()
-    try:
-        print(data)
-        file = open('test.txt', 'w')
-        file.write(data)
-        file.close()
-    except Exception as e:
-        print("Could not write file")
-
+    email = parse.get_raw_email()
+    data = email
     return "OK"
 
 if __name__ == '__main__':
