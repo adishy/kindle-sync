@@ -30,13 +30,26 @@ def index():
     """Show index page to confirm that server is running."""
     return render_template('index.html')
 
+@app.route('/last_email', methods=['GET'])
+def last_email_saved():
+    email_path = "last_email_saved.txt"
+    if not os.path.exists(email_path):
+        return "No emails were saved!"
+    file = open(email_path, "r")
+    return file.read()
+
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
     """Process POST from Inbound Parse and print received data."""
     parse = Parse(config, request)
     # Sample processing action
     print("Email!")
-    mail = mailparser.parse_from_string(parse.get_raw_email())
+    raw_email = parse.get_raw_email()
+    file = open("last_email_saved.txt", "w")
+    file.write(raw_email)
+    file.close()
+    print("Saved last email")
+    mail = mailparser.parse_from_string(raw_email)
     print("Attachments", len(mail.attachments))
     for attached_file in mail.attachments:
         try:
