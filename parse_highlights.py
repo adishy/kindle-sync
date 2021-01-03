@@ -19,13 +19,10 @@ def parse_highlights(notebook_data):
 
     for div in soup.find_all("div"):
         classname = div.get("class")[0]
-        #print(classname)
         data = div.text.strip()
         if classname == "bookTitle":
-            print("Book title")
             notebook_details["title"] = data
         elif classname == "authors":
-            print("authors")
             notebook_details["authors"] = data
         elif classname == "sectionHeading":
             notebook_details["sections"].append(

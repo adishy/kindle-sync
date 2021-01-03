@@ -42,7 +42,9 @@ def inbound_parse():
             raw_payload = attached_file["payload"]
             payload_bytes = base64.b64decode(raw_payload)
             html_payload = payload_bytes.decode("utf-8")
-            print(parse_highlights(html_payload))
+            highlights = parse_highlights(html_payload)
+            print(f"Received and parsed highlights for {highlights['title']}")
+            save_to_notion(highlights)
         except Exception as e:
             print(e)
             print("Could not process attached file")
