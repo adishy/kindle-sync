@@ -16,6 +16,7 @@ except:
 
 from flask import Flask, request, render_template
 from parse_highlights import parse_highlights
+from sync_to_notion import SyncToNotion
 import base64
 import mailparser
 import os
@@ -44,7 +45,7 @@ def inbound_parse():
             html_payload = payload_bytes.decode("utf-8")
             highlights = parse_highlights(html_payload)
             print(f"Received and parsed highlights for {highlights['title']}")
-            save_to_notion(highlights)
+            SyncToNotion(highlights)
         except Exception as e:
             print(e)
             print("Could not process attached file")

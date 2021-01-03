@@ -7,3 +7,4 @@ starkbank-ecdsa>=1.0.0
 mail-parser
 beautifulsoup4
 notion
+rq
