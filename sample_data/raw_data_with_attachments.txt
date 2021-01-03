@@ -6,293 +6,151 @@ Content-Disposition: form-data; name="dkim"
 Content-Disposition: form-data; name="email"
 
 MIME-Version: 1.0
-Received: by 0.0.0.0 with HTTP; Mon, 15 Aug 2016 13:47:21 -0700 (PDT)
-From: Example User <test@example.com>
-Date: Mon, 15 Aug 2016 13:47:21 -0700
-Subject: Inbound Parse Test Raw Data with Attachment
-To: inbound@inbound.inbound.com
-Content-Type: multipart/mixed; boundary=001a1140ffb6f4fc63053a2257e2
-
---001a1140ffb6f4fc63053a2257e2
-Content-Type: multipart/alternative; boundary=001a1140ffb6f4fc5f053a2257e0
-
---001a1140ffb6f4fc5f053a2257e0
-Content-Type: text/plain; charset=UTF-8
-
-Hello Twilio SendGrid!
-
---001a1140ffb6f4fc5f053a2257e0
-Content-Type: text/html; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
-
-<html><body><strong>Hello Twilio SendGrid!</body></html>
-
---001a1140ffb6f4fc5f053a2257e0--
-
---001a1140ffb6f4fc63053a2257e2
-Content-Type: image/jpeg; name="SendGrid.jpg"
-Content-Disposition: attachment; filename="SendGrid.jpg"
-Content-Transfer-Encoding: base64
-X-Attachment-Id: f_irwihell0
-
-/9j/4AAQSkZJRgABAQABLAEsAAD/4QDKRXhpZgAATU0AKgAAAAgABwESAAMA
-AAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAEx
-AAIAAAARAAAAcgEyAAIAAAAUAAAAhIdpAAQAAAABAAAAmAAAAAAAAAEsAAAA
-AQAAASwAAAABUGl4ZWxtYXRvciAzLjQuNAAAMjAxNjowODoxMSAxNjowODo1
-NwAAA6ABAAMAAAABAAEAAKACAAQAAAABAAACEqADAAQAAAABAAACFQAAAAD/
-4Qn2aHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVn
-aW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4
-bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAg
-Q29yZSA1LjQuMCI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53
-My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3Jp
-cHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2Jl
-LmNvbS94YXAvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9l
-bGVtZW50cy8xLjEvIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxNi0wOC0xMVQxNjow
-ODo1NyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBJbWFnZVJlYWR5Ij4gPGRj
-OnN1YmplY3Q+IDxyZGY6QmFnLz4gPC9kYzpzdWJqZWN0PiA8L3JkZjpEZXNj
-cmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICA8P3hwYWNrZXQgZW5kPSJ3Ij8+AP/tADhQaG90b3Nob3Ag
-My4wADhCSU0EBAAAAAAAADhCSU0EJQAAAAAAENQdjNmPALIE6YAJmOz4Qn7/
-wAARCAIVAhIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQF
-BgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJx
-FDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdI
-SUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKj
-pKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
-8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QA
-tREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB
-CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldY
-WVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmq
-srO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6
-/9sAQwAcHBwcHBwwHBwwRDAwMERcRERERFx0XFxcXFx0jHR0dHR0dIyMjIyM
-jIyMqKioqKioxMTExMTc3Nzc3Nzc3Nzc/9sAQwEiJCQ4NDhgNDRg5pyAnObm
-5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm
-5ubm/90ABAAi/9oADAMBAAIRAxEAPwDpKKKKACiiigAooooAKKKKACiiigAo
-oooAKKKKACiiigAooooAKKKKACiiigDEnkkEzgMep71F5sn94/nTp/8AXP8A
-U1FXWloeZJu7H+bJ/eP50ebJ/eP50yinYm7H+bJ/eP50ebJ/eP50yiiwXY/z
-ZP7x/OjzZP7x/OmUUWC7H+bJ/eP50ebJ/eP50yiiwXY/zZP7x/OjzZP7x/Om
-UUWC7H+bJ/eP50ebJ/eP50yiiwXY/wA2T+8fzo82T+8fzplFFgux/myf3j+d
-Hmyf3j+dMoosF2P82T+8fzo82T+8fzplFFgux/myf3j+dHmyf3j+dMoosF2I
-0sufvt+dJ5sv99vzNMbrSVVkbpuxJ5sv99vzNHmy/wB9vzNR0U7Id2SebL/f
-b8zR5sv99vzNR0UWQXZJ5sv99vzNHmy/32/M1HRRZBdknmy/32/M0ebL/fb8
-zUdFFkF2SebL/fb8zR5sv99vzNR0UWQXZJ5sv99vzNHmy/32/M1HRRZBdknm
-y/32/M0ebL/fb8zUdFFkF2SebL/fb8zR5sv99vzNR0UWQXZJ5sv99vzNHmy/
-32/M1HRRZBdknmy/32/M0ebL/fb8zUdFFkF2SebL/fb8zR5sv99vzNR0UWQX
-Z//Q6SiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAo
-oooAwZ/9c/1NRVLP/rn+pqKuxbHly3YUUUUyQooooAKKKKACiiigAooooAKK
-KKACiiigAooooAKKKKACiiigCJutJSt1pKo3WwUUUUDCiiigAooooAKKKKAC
-iiigAooooAKKKKACiiigAooooAKKKKACiiigD//R6SiiigAooooAKKKKACii
-igAooooAKKKKACiiigAooooAKKKKACiiigAooooAwZ/9c/1NRVLP/rn+pqKu
-xbHly3YUUUUyQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig
-CJutJSt1pKo3WwUUUUDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooo
-oAKKKKACiiigD//S6SiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA
-KKKKACiiigAooooAwZ/9c/1NRVLP/rn+pqKuxbHly3YUUUUyQooooAKKKKAC
-iiigAooooAKKKKACiiigAooooAKKKKACiiigCJutJSt1pKo3WwUUUUDCiiig
-AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//T6SiiigAo
-oooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAwZ/9c/1N
-RVLP/rn+pqKuxbHly3YUUUUyQooooAKKKKACiiigAooooAKKKKACiiigAooo
-oAKKKKACiiigCJutJSt1pKo3WwUUUUDCiiigAooooAKKKKACiiigAooooAKK
-KKACiiigAooooAKKKKACiiigD//U6SiiigAooooAKKKKACiiigAooooAKKKK
-ACiiigAooooAKKKKACiiigAooooAwZ/9c/1NRVLP/rn+pqKuxbHly3YUUUUy
-QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCJutJSt1pKo3
-WwUUUUDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig
-D//V6SiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAo
-oooAwZ/9c/1NRVLP/rn+pqKuxbHly3YUUUUyQooooAKKKKACiiigAooooAKK
-KKACiiigAooooAKKKKACiiigCJutJSt1pKo3WwUUUUDCiiigAooooAKKKKAC
-iiigAooooAKKKKACiiigAooooAKKKKACiiigD//W6SiiigAooooAKKKKACii
-igAooooAKKKKACiiigAooooAKKKKACiiigAooooAwZ/9c/1NRVLP/rn+pqKu
-xbHly3YUUUUyQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig
-CJutJSt1pKo3WwUUUUDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooo
-oAKKKKACiiigD//X6SiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA
-KKKKACiiigAooooAwZ/9c/1NRVLP/rn+pqKuxbHly3YUUUUyQooooAKKKKAC
-iiigAooooAKKKKACiiigAooooAKKKKACiiigCJutJSt1pKo3WwUUUUDCiiig
-AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//Q6SiiigAo
-oooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAwZ/9c/1N
-RVLP/rn+pqKuxbHly3YUUUUyQooooAKKKKACiiigAooooAKKKKACiiigAooo
-oAKKKKACiiigCJutJSt1pKo3WwUUUUDCiiigAooooAKKKKACiiigAooooAKK
-KKACiiigAooooAKKKKACiiigD//R6SiiigAooooAKKKKACiiigAooooAKKKK
-ACiiigAooooAKKKKACiiigAooooAwZ/9c/1NRVLP/rn+pqKuxbHly3YUUUUy
-QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCJutJSt1pKo3
-WwUUUUDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig
-D//S2i7560m9/WmnqaStbHPdj97+tG9/WmUUWC7H739aN7+tMoosF2P3v60b
-39aZRRYLsfvf1o3v60yiiwXY/e/rRvf1plFFgux+9/Wje/rTKKLBdj97+tG9
-/WmUUWC7H739aN7+tMoosF2P3v60b39aZRRYLsfvf1o3v60yiiwXZlzEmVvr
-UeTT5f8AWt9ajrdbHI9xcmjJpKKYhcmjJpKKAFyaMmkooAXJoyaSigBcmjJp
-KKAFyaMmkooAXJoyaSigBcmjJpKKAFyaMmkooAXJoyaSigBwAPWlwKB0paBX
-YmBRgUtFAXYmBRgUtFAXYmBRgUtFAXYmBRgUtFAXYmBRgUtFAXYmBRgUtFAX
-YmBRgUtFAXYmBRgUtFAXYmBRgUtFAXYmBRgUtFAXYmBRgUtFAXZ//9PXPU0l
-KeppK1OYKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKK
-AMqX/Wt9ajqSX/Wt9ajroRyvcKKKKBBRRRQAUUUUAFFFFABRRRQAUUUUAFFF
-FABRRRQAUUUUAFFFFADx0paQdKWgkKKKKACiiigAooooAKKKKACiiigAoooo
-AKKKKACiiigAooooAKKKKACiiigD/9TXPU0lKeppK1OYKKKKACiiigAooooA
-KKKKACiiigAooooAKKKKACiiigAooooAKKKKAMqX/Wt9ajqSX/Wt9ajroRyv
-cKKKKBBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADx0paQ
-dKWgkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACi
-iigD/9XXPU0lKeppK1OYKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii
-igAooooAKKKKAMqX/Wt9ajqSX/Wt9ajroRyvcKKKKBBRRRQAUUUUAFFFFABR
-RRQAUUUUAFFFFABRRRQAUUUUAFFFFADx0paQdKWgkKKKKACiiigAooooAKKK
-KACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9bXPU0lKeppK1OYKKKK
-ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMqX/Wt9ajqS
-X/Wt9ajroRyvcKKKKBBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUU
-AFFFFADx0paQdKWgkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigA
-ooooAKKKKACiiigD/9fXPU0lKeppK1OYKKKKACiiigAooooAKKKKACiiigAo
-oooAKKKKACiiigAooooAKKKKAMqX/Wt9ajqSX/Wt9ajroRyvcKKKKBBRRRQA
-UUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADx0paQdKWgkKKKKACi
-iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9DXPU0l
-KeppK1OYKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKK
-AMqX/Wt9ajqSX/Wt9ajroRyvcKKKKBBRRRQAUUUUAFFFFABRRRQAUUUUAFFF
-FABRRRQAUUUUAFFFFADx0paQdKWgkKKKKACiiigAooooAKKKKACiiigAoooo
-AKKKKACiiigAooooAKKKKACiiigD/9HXPU0lKeppK1OYKKKKACiiigAooooA
-KKKKACiiigAooooAKKKKACiiigAooooAKKKKAMqX/Wt9ajqSX/Wt9ajroRyv
-cKKKKBBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADx0paQ
-dKWgkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACi
-iigD/9LXPU0lKeppK1OYKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii
-igAooooAKKKKAMqX/Wt9ajqSX/Wt9ajroRyvcKKKKBBRRRQAUUUUAFFFFABR
-RRQAUUUUAFFFFABRRRQAUUUUAFFFFADx0paQdKWgkKKKKACiiigAooooAKKK
-KACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9PXPU0lKeppK1OYKKKK
-ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMqX/Wt9ajqS
-X/Wt9ajroRyvcKKKKBBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUU
-AFFFFADx0paQdKWgkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigA
-ooooAKKKKACiiigD/9TXPU0lKeppK1OYKKKKACiiigAooooAKKKKACiiigAo
-oooAKKKKACiiigAooooAKKKKAMqX/Wt9ajqSX/Wt9ajroRyvcKKKKBBRRRQA
-UUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFADx0paQdKWgkKKKKACi
-iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9WV7mUO
-Rnv6U37TN6/pUMn32+pptdyiuxxNssfaZvX9KPtM3r+lV6KOVdguyx9pm9f0
-o+0zev6VXoo5V2C7LH2mb1/Sj7TN6/pVeijlXYLssfaZvX9KPtM3r+lV6KOV
-dguyx9pm9f0o+0zev6VXoo5V2C7LH2mb1/Sj7TN6/pVeijlXYLssfaZvX9KP
-tM3r+lV6KOVdguyx9pm9f0o+0zev6VXoo5V2C7LH2mb1/Sj7TN6/pVeijlXY
-LssfaZvX9KPtM3r+lV6KOVdguzRSFJFEjdTyad9mi96fD/ql+lS1g27lcqK/
-2aL3o+zRe9WKKXMw5V2K/wBmi96Ps0XvViijmYcq7Ff7NF70fZoverFFHMw5
-V2K/2aL3o+zRe9WKKOZhyrsV/s0XvR9mi96sUUczDlXYr/Zovej7NF71Yoo5
-mHKuxX+zRe9H2aL3qxRRzMOVdiv9mi96Ps0XvViijmYcq7Ff7NF70fZoverF
-FHMw5V2K/wBmi96Ps0XvViijmYcq7BHZwlcnP50/7FB6H86ni+4KkqHJ9zdU
-422Kn2KD0P50fYoPQ/nVuilzvuP2cexU+xQeh/Oj7FB6H86t0Uc77h7OPYqf
-YoPQ/nR9ig9D+dW6KOd9w9nHsVPsUHofzo+xQeh/OrdFHO+4ezj2Kn2KD0P5
-0fYoPQ/nVuijnfcPZx7FT7FB6H86PsUHofzq3RRzvuHs49ip9ig9D+dH2KD0
-P51boo533D2cexU+xQeh/Oj7FB6H86t0Uc77h7OPYqfYoPQ/nR9ig9D+dW6K
-Od9w9nHsVPsUHofzo+xQeh/OrdFHO+4ezj2Kn2KD0P50fYoPQ/nVuijnfcPZ
-x7H/1mSffb6mm06T77fU02u9HCwooooAKKKKACiiigAooooAKKKKACiiigAo
-oooAKKKKACiiigAooooA1of9Uv0qWoof9Uv0qWuZ7mqCiiikAUUUUAFFFFAB
-RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBai+4KkqOL7gqSs3udEdgooo
-pDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9dk
-n32+pptOk++31NNrvRwsKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii
-igAooooAKKKKANaH/VL9KlqKH/VL9Klrme5qgooopAFFFFABRRRQAUUUUAFF
-FFABRRRQAUUUUAFFFFABRRRQAUUUUAWovuCpKji+4KkrN7nRHYKKKKQwoooo
-AKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//QZJ99vqab
-TpPvt9TTa70cLCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKK
-ACiiigDWh/1S/Spaih/1S/Spa5nuaoKKKKQBRRRQAUUUUAFFFFABRRRQAUUU
-UAFFFFABRRRQAUUUUAFFFFAFqL7gqSo4vuCpKze50R2CiiikMKKKKACiiigA
-ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0WSffb6mm06T77fU
-02u9HCwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA
-1of9Uv0qWoof9Uv0qWuZ7mqCiiikAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQ
-AUUUUAFFFFABRRRQBai+4KkqOL7gqSs3udEdgooopDCiiigAooooAKKKKACi
-iigAooooAKKKKACiiigAooooAKKKKACiiigD/9Jkn32+pptOk++31NNrvRws
-KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKANaH/VL9
-KlqKH/VL9Klrme5qgooopAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAB
-RRRQAUUUUAWovuCpKji+4KkrN7nRHYKKKKQwooooAKKKKACiiigAooooAKKK
-KACiiigAooooAKKKKACiiigAooooA//TZJ99vqabTpPvt9TTa70cLCiiigAo
-oooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDWh/1S/Spaih/1
-S/Spa5nuaoKKKKQBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFF
-FFAFqL7gqSo4vuCpKze50R2CiiikMKKKKACiiigAooooAKKKKACiiigAoooo
-AKKKKACiiigAooooAKKKKAP/1GSffb6mm06T77fU02u9HCwooooAKKKKACii
-igAooooAKKKKACiiigAooooAKKKKACiiigAooooA1of9Uv0qWoof9Uv0qWuZ
-7mqCiiikAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBai+
-4KkqOL7gqSs3udEdgooopDCiiigAooooAKKKKACiiigAooooAKKKKACiiigA
-ooooAKKKKACiiigD/9Vkn32+pptOk++31NNrvRwsKKKKACiiigAooooAKKKK
-ACiiigAooooAKKKKACiiigAooooAKKKKANaH/VL9KlqKH/VL9Klrme5qgooo
-pAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAWovuCpKji+
-4KkrN7nRHYKKKKQwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACi
-iigAooooA//WZJ99vqabTpPvt9TTa70cLCiiigAooooAKKKKACiiigAooooA
-KKKKACiiigAooooAKKKKACiiigDWh/1S/Spaih/1S/Spa5nuaoKKKKQBRRRQ
-AUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAFqL7gqSo4vuCpKze5
-0R2CiiikMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKK
-KAP/12Sffb6mm06T77fU02u9HCwooooAKKKKACiiigAooooAKKKKACiiigAo
-oooAKKKKACiiigAooooA1of9Uv0qWoof9Uv0qWuZ7mqCiiikAUUUUAFFFFAB
-RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBai+4KkqOL7gqSs3udEdgooo
-pDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9DU
-OnxMSdx5pP7Oi/vNWjRV+0l3I5I9jO/s6L+81H9nRf3mrRoo9pLuHs49jO/s
-6L+81H9nRf3mrRoo9pLuHs49jO/s6L+81H9nRf3mrRoo9pLuHs49jO/s6L+8
-1H9nRf3mrRoo9pLuHs49jO/s6L+81H9nRf3mrRoo9pLuHs49jO/s6L+81H9n
-Rf3mrRoo9pLuHs49jO/s6L+81H9nRf3mrRoo9pLuHs49jO/s6L+81H9nRf3m
-rRoo9pLuHs49jO/s6L+81H9nRf3mrRoo9pLuHs49jO/s6L+81H9nRf3mrRoo
-9pLuHs49iBLdUUKCeKd5K+pqWip5mPlRF5K+po8lfU1LRRdhyoi8lfU0eSvq
-aloouw5UReSvqaPJX1NS0UXYcqIvJX1NHkr6mpaKLsOVEXkr6mjyV9TUtFF2
-HKiLyV9TR5K+pqWii7DlRF5K+po8lfU1LRRdhyoi8lfU0eSvqaloouw5UReS
-vqaPJX1NS0UXYcqIvJX1NHkr6mpaKLsOVCKu0YFLRRSKCiiigAooooAKKKKA
-CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=
-
---001a1140ffb6f4fc63053a2257e2--
-
---xYzZY
-Content-Disposition: form-data; name="to"
-
-inbound@inbound.inbound.com
---xYzZY
-Content-Disposition: form-data; name="from"
-
-Example User <test@example.com>
---xYzZY
-Content-Disposition: form-data; name="sender_ip"
-
-0.0.0.0
---xYzZY
-Content-Disposition: form-data; name="envelope"
-
-{"to":["inbound@inbound.inbound.com"],"from":"test@example.com"}
---xYzZY
-Content-Disposition: form-data; name="subject"
-
-Raw Payload
---xYzZY
-Content-Disposition: form-data; name="charsets"
-
-{"to":"UTF-8","subject":"UTF-8","from":"UTF-8"}
---xYzZY
-Content-Disposition: form-data; name="SPF"
-
-pass
---xYzZY--
+Received: by mx0028p1iad2.sendgrid.net with SMTP id Qj48eF3r3h Sun, 03 Jan 2021 07:58:22 +0000 (UTC) Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com [209.85.221.51]) by mx0028p1iad2.sendgrid.net (Postfix) with ESMTPS id 9BCE04614CC for ; Sun, 3 Jan 2021 07:58:22 +0000 (UTC) Received: by mail-wr1-f51.google.com with SMTP id w5so27760887wrm.11 for ; Sat, 02 Jan 2021 23:58:22 -0800 (PST) DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umich.edu; s=google-2016-06-03; h=content-transfer-encoding:from:mime-version:date:subject:message-id :to; bh=Jw0P2eX3GZ/wzOIeKayrEKaViTyl4OGqvgfGCYz1j4U=; b=NWG06GEeDkqHWYT7Zj8u3sfReczdLW1xKNPX6WL0vhEbEO1biNbXWpRVpdWRALYuGD 2w71UZsfiSeaxxhCn1bQUFHnMMnPhnBLjoS2nqdTkgjEHwiLErc1RrAzqMkEpyZdSiOV zdmQddSKFMEUu5vhlkeUNdIYHVdKTQShXfIxgTC4MrvA+/HtJIFSQ9VIsgloM5w/rX8z gmpoTihIB9vhqB+nKjTtmfvnC9xbxgPKcnV5L+6BnFMecNhfp5tf4GVD3MfCFbrfDK37 +qny+OMSYEqcS77LP0PyM/h1awJCsobwwQWtGBIGt5RTzVoo5GnaKWRJ8N6ndEZZ7Khc xPDA== X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net; s=20161025; h=x-gm-message-state:content-transfer-encoding:from:mime-version:date :subject:message-id:to; bh=Jw0P2eX3GZ/wzOIeKayrEKaViTyl4OGqvgfGCYz1j4U=; b=mfNtkfZMMPXsVWpi1Scfl+lJRwnRAH5rN3MAojGJquXa9nhFPn3PBBV8LruBEKBa12 f0ORQSY3NAfv5RRk+4cIDrVBob4Sdz1N6uG/pYXurnWPEBAmqy+gTLZi7ekV42uhbNbj HAKjGG13BiMvp9I1gl1bgc6FcruAqMzn97c6ztqhGGzjZD/hFH+ZLkNnGuJdqlwQbCZ2 hioqfIqoYtMDA5tMV/NMBiuk/NYoER8Xket0oQadChRyOQLjSXeknuG4NRwOzUca17dq Y7+IWAwqYLaQsO/4aK1pwlemnmBt89ESIEbjbhJgD04DY4dSFbr259VbPHZH2KZGkHuO vR3Q== X-Gm-Message-State: AOAM5322Nr0n3j9FHYUN6Kp3EMZwK76I91/q9VMjY0JlIgkCg/bHkIOn K4sCbI9qS+Hf876PRHiXpHezc+tpdcHsIO6SUt0Ev5Yqbe1tLorEEpMB1XsYS7SEo7tKI8meVbd MPV6HDwmnM4CbiMfzS3avGAobvHO09rWdxvsR1AD6/fQ2sx1gmDqAOEWECcZkVlaz/ezPrw== X-Google-Smtp-Source: ABdhPJyjG1Dk2VC1IcizjIuKbfMtYSwwkzd8wEy/mtDUdTmizvWH/SJ4MIXAC4Q4H8RbgiMQTDv59A== X-Received: by 2002:a5d:4f8a:: with SMTP id d10mr73903320wru.219.1609660701387; Sat, 02 Jan 2021 23:58:21 -0800 (PST) Received: from [192.168.100.76] ([84.242.45.208]) by smtp.gmail.com with ESMTPSA id s25sm93644769wrs.49.2021.01.02.23.58.20 for (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128); Sat, 02 Jan 2021 23:58:20 -0800 (PST) Content-Type: multipart/mixed; boundary=Apple-Mail-8D62F795-8871-4A2A-9F9D-A76E8F44EB84 Content-Transfer-Encoding: 7bit From: Aditya Manjusha Shylesh Mime-Version: 1.0 (1.0) Date: Sun, 3 Jan 2021 11:58:18 +0400 Subject: iPhone Notebook export for Deep Work Message-Id: <78246F2E-221E-4818-8A29-63750D956D26@umich.edu> To: me@highlights.adishy.com X-Mailer: iPhone Mail (18C66) --Apple-Mail-8D62F795-8871-4A2A-9F9D-A76E8F44EB84 Content-Type: text/plain; charset=us-ascii Content-Transfer-Encoding: 7bit Your Notebook exported from Deep Work is attached to this email. --Apple-Mail-8D62F795-8871-4A2A-9F9D-A76E8F44EB84 Content-Type: text/html; name="Deep Work - Notebook.html"; x-apple-part-url=FC082B1E-65A1-4830-A8A0-AD4AE12DB3F1 Content-Disposition: attachment; filename="Deep Work - Notebook.html" Content-Transfer-Encoding: quoted-printable
+Notebook Export
+Deep Work
+Cal Newport
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+Introduction
+Highlight(yellow) - Location 31
+Deep Work: Professional activities performed in a state of distraction-= free concentration that push your cognitive capabilities to their limit.
+Highlight(yellow) - Location 171
+The Deep Work Hypothesis: The ability to perform deep work is becoming = increasingly rare at exactly the same time it is becoming increasingly valu= able in our economy. As a consequence, the few who cultivate this skill, an= d then make it the core of their working life, will thrive. This book has t= wo goals, pursued in two parts. The first, tackled in Part 1, is to convinc= e you that the deep work hypothesis is true. The second, tackled in Part 2,= is to teach you how to take advantage of this reality by training your bra= in and transforming your work habits to place deep work at the core of your= professional life.
+Highlight(yellow) - Location 201
+More generally, the lack of distraction in my life tones down that back= ground hum of nervous mental energy that seems to increasingly pervade peop= le=E2=80=99s daily lives.
+Chapter 1: Deep Work Is Valuable
+Highlight(yellow) - Location 265
+It no longer makes sense, for example, to hire a full-time programmer, = put aside office space, and pay benefits, when you can instead pay one of t= he world=E2=80=99s best programmers, like Hansson, for just enough time to = complete the project at hand.
+Highlight(yellow) - Location 285
+An increasing number of individuals in our economy are now competing wi= th the rock stars of their sectors.
+Highlight(yellow) - Location 338
+this process of mastering hard things never ends: You must be able to d= o it quickly, again and again.
+Highlight(yellow) - Location 343
+If you can=E2=80=99t learn, you can=E2=80=99t thrive.
+Highlight(yellow) - Location 352
+If you don=E2=80=99t produce, you won=E2=80=99t thrive=E2=80=94no matte= r how skilled or talented you are.
+Highlight(yellow) - Location 355
+The two core abilities just described depend on your ability to perform= deep work.
+Highlight(yellow) - Location 384
+Its core components are usually identified as follows: (1) your attenti= on is focused tightly on a specific skill you=E2=80=99re trying to improve = or an idea you=E2=80=99re trying to master; (2) you receive feedback so you= can correct your approach to keep your attention exactly where it=E2=80=99= s most productive.
+Highlight(yellow) - Location 405
+To learn hard things quickly, you must focus intensely without distract= ion.
+Highlight(yellow) - Location 478
+To produce at your peak level you need to work for extended periods wit= h full concentration on a single task free from distraction.
+Highlight(yellow) - Location 508
+A good chief executive is essentially a hard-to-automate decision engin= e, not unlike IBM=E2=80=99s Jeopardy!-playing Watson system.
+Chapter 2: Deep Work Is Rare
+Bookmark - Location 612
+Highlight(yellow) - Location 668
+The Principle of Least Resistance, protected from scrutiny by the metri= c black hole, supports work cultures that save us from the short-term disco= mfort of concentration and planning, at the expense of long-term satisfacti= on and the production of real value.
+Highlight(yellow) - Location 783
+deep work is hard and shallow work is easier, that in the absence of cl= ear goals for your job, the visible busyness that surrounds shallow work be= comes self-preserving, and that our culture has developed a belief that if = a behavior relates to =E2=80=9Cthe Internet,=E2=80=9D then it=E2=80=99s goo= d=E2=80=94regardless of its impact on our ability to produce valuable thing= s.
+Chapter 3: Deep Work Is Meaningful
+Highlight(yellow) - Location 873
+Gallagher=E2=80=99s grand theory to better understand
+Highlight(yellow) - Location 930
+=E2=80=9CThe best moments usually occur when a person=E2=80=99s body or= mind is stretched to its limits in a voluntary effort to accomplish someth= ing difficult and worthwhile.=E2=80=9D
+Highlight(yellow) - Location 938
+When measured empirically, people were happier at work and less happy r= elaxing than they suspected. And as the ESM studies confirmed, the more suc= h flow experiences that occur in a given week, the higher the subject=E2=80= =99s life satisfaction. Human beings, it seems, are at their best when imme= rsed deeply in something challenging.
+Highlight(yellow) - Location 947
+Deep work is an activity well suited to generate a flow state
+Highlight(yellow) - Location 955
+To build your working life around the experience of flow produced by de= ep work is a proven path to deep satisfaction.
+Highlight(yellow) - Location 10= 32
+This is perhaps the best way to sum up the argument of this chapter and= of Part 1 more broadly: A deep life is a good life, any way you look at it.
+Rule #1: Work Deeply
+Highlight(yellow) - Location 10= 95
+You have a finite amount of willpower that becomes depleted as you use = it.
+Highlight(yellow) - Location 10= 98
+The same will happen to you, regardless of your intentions=E2=80=94unle= ss, that is, you=E2=80=99re smart about your habits.
+Highlight(yellow) - Location 11= 23
+You need your own philosophy for integrating deep work into your profes= sional life.
+Highlight(yellow) - Location 11= 25
+You must be careful to choose a philosophy that fits your specific circ= umstances, as a mismatch here can derail your deep work habit before it has= a chance to solidify.
+Highlight(yellow) - Location 11= 29
+The Monastic Philosophy of Deep Work Scheduling
+Highlight(yellow) - Location 11= 41
+monastic philosophy of deep work scheduling. This philosophy attempts t= o maximize deep efforts by eliminating or radically minimizing shallow obli= gations.
+Highlight(yellow) - Location 11= 42
+Practitioners of the monastic philosophy tend to have a well-defined an= d highly valued professional goal that they=E2=80=99re pursuing, and the bu= lk of their professional success comes from doing this one thing exceptiona= lly well.
+Highlight(yellow) - Location 11= 58
+If I organize my life in such a way that I get lots of long, consecutiv= e, uninterrupted time-chunks, I can write novels. But as those chunks get s= eparated and fragmented, my productivity as a novelist drops spectacularly.
+Highlight(yellow) - Location 11= 79
+Jung did not deploy a monastic approach to deep work.
+Highlight(yellow) - Location 11= 81
+Jung, by contrast, sought this elimination only during the periods he s= pent at his retreat.
+Highlight(yellow) - Location 11= 87
+bimodal philosophy of deep work. This philosophy asks that you divide y= our time, dedicating some clearly defined stretches to deep pursuits and le= aving the rest open to everything else.
+Highlight(yellow) - Location 11= 93
+The bimodal philosophy believes that deep work can produce extreme prod= uctivity, but only if the subject dedicates enough time to such endeavors t= o reach maximum cognitive intensity=E2=80=94the state in which real breakth= roughs occur. This is why the minimum unit of time for deep work in this ph= ilosophy tends to be at least one full day.
+Highlight(yellow) - Location 12= 13
+people will usually respect your right to become inaccessible if these = periods are well defined and well advertised, and outside these stretches, = you=E2=80=99re once again easy to find.
+Highlight(yellow) - Location 12= 26
+rhythmic philosophy. This philosophy argues that the easiest way to con= sistently start deep work sessions is to transform them into a simple regul= ar habit.
+Highlight(yellow) - Location 12= 28
+The chain method is a good example of the rhythmic philosophy of deep w= ork scheduling because it combines a simple scheduling heuristic (do the wo= rk every day), with an easy way to remind yourself to do the work: the big = red Xs on the calendar.
+Highlight(yellow) - Location 12= 51
+nature. By supporting deep work with rock-solid routines that make sure= a little bit gets done on a regular basis, the rhythmic scheduler will oft= en log a larger total number of deep hours per year.
+Highlight(yellow) - Location 13= 17
+In fact, perhaps the single best piece of advice I can offer to anyone = trying to do creative work is to ignore inspiration.
+Highlight(yellow) - Location 13= 21
+To make the most out of your deep work sessions, build rituals of the s= ame level of strictness and idiosyncrasy as the important thinkers mentione= d previously.
+Highlight(yellow) - Location 13= 24
+Their rituals minimized the friction in this transition to depth, allow= ing them to go deep more easily and stay in the state longer.
+Highlight(yellow) - Location 13= 26
+There=E2=80=99s no one correct deep work ritual=E2=80=94the right fit d= epends on both the person and the type of project pursued.
+Highlight(yellow) - Location 13= 28
+Your ritual needs to specify a location for your deep work efforts.
+Highlight(yellow) - Location 13= 32
+Regardless of where you work, be sure to also give yourself a specific = time frame to keep the session a discrete challenge and not an open-ended s= log.
+Highlight(yellow) - Location 13= 96
+In all of these examples, it=E2=80=99s not just the change of environme= nt or seeking of quiet that enables more depth. The dominant force is the p= sychology of committing so seriously to the task at hand. To put yourself i= n an exotic location to focus on a writing project, or to take a week off f= rom work just to think, or to lock yourself in a hotel room until you compl= ete an important invention: These gestures push your deep goal to a level o= f mental priority that helps unlock the needed mental resources. Sometimes = to go deep, you must first go big. Don=E2=80=99t Work Alone The relationshi= p between deep work and collaboration is tricky. It=E2=80=99s worth taking = the time to untangle, however, because properly leveraging collaboration ca= n increase the quality of deep work in your professional life.
+Highlight(yellow) - Location 14= 94
+Separate your pursuit of serendipitous encounters from your efforts to = think deeply and build on these inspirations.
+Highlight(yellow) - Location 14= 95
+You should try to optimize each effort separately, as opposed to mixing= them together into a sludge that impedes both goals.
+Highlight(yellow) - Location 14= 97
+By working side by side with someone on a problem, you can push each ot= her toward deeper levels of depth, and therefore toward the generation of m= ore and more valuable output as compared to working alone.
+Highlight(yellow) - Location 15= 24
+Discipline #1: Focus on the Wildly Important
+Highlight(yellow) - Location 15= 26
+They elaborate that execution should be aimed at a small number of =E2= =80=9Cwildly important goals.=E2=80=9D This simplicity will help focus an o= rganization=E2=80=99s energy to a sufficient intensity to ignite real resul= ts.
+Highlight(yellow) - Location 15= 27
+For an individual focused on deep work, the implication is that you sho= uld identify a small number of ambitious outcomes to pursue with your deep = work hours.
+Highlight(yellow) - Location 15= 38
+In 4DX, there are two types of metrics for this purpose: lag measures a= nd lead measures.
+Highlight(yellow) - Location 15= 38
+Lag measures describe the thing you=E2=80=99re ultimately trying to imp= rove.
+Highlight(yellow) - Location 15= 41
+Lead measures, on the other hand, =E2=80=9Cmeasure the new behaviors th= at will drive success on the lag measures.=E2=80=9D
+Highlight(yellow) - Location 15= 43
+As you increase this number, your lag measures will likely eventually i= mprove as well.
+Highlight(yellow) - Location 15= 50
+Discipline #3: Keep a Compelling Scoreboard
+Highlight(yellow) - Location 15= 53
+it=E2=80=99s important that they have a public place to record and trac= k their lead measures.
+Highlight(yellow) - Location 15= 57
+the individual=E2=80=99s scoreboard should be a physical artifact in th= e workspace that displays the individual=E2=80=99s current deep work hour c= ount.
+Highlight(yellow) - Location 15= 66
+Discipline #4: Create a Cadence of Accountability
+Highlight(yellow) - Location 15= 72
+For an individual focused on his or her own deep work habit, there=E2= =80=99s likely no team to meet with, but this doesn=E2=80=99t exempt you fr= om the need for regular accountability.
+Highlight(yellow) - Location 15= 74
+the workweek ahead (see Rule #4). During my experiments with 4DX, I use= d a weekly review to look over my scoreboard to celebrate good weeks, help = understand what led to bad weeks, and most important, figure out how to ens= ure a good score for the days ahead.
+Highlight(yellow) - Location 16= 09
+At the end of the workday, shut down your consideration of work issues = until the next morning=E2=80=94no after-dinner e-mail check, no mental repl= ays of conversations, and no scheming about how you=E2=80=99ll handle an up= coming challenge; shut down work thinking completely. If you need more time= , then extend your workday, but once you shut down, your mind must be left = free to encounter Kreider=E2=80=99s buttercups, stink bugs, and stars.
+Highlight(yellow) - Location 16= 15
+Reason #1: Downtime Aids Insights
+Highlight(yellow) - Location 16= 26
+Observations from experiments such as this one led Dijksterhuis and his= collaborators to introduce unconscious thought theory (UTT)=E2=80=94an att= empt to understand the different roles conscious and unconscious deliberati= on play in decision making. At a high level, this theory proposes that for = decisions that require the application of strict rules, the conscious mind = must be involved.
+Highlight(yellow) - Location 16= 30
+On the other hand, for decisions that involve large amounts of informat= ion and multiple vague, and perhaps even conflicting, constraints, your unc= onscious mind is well suited to tackle the issue.
+Highlight(yellow) - Location 16= 31
+UTT hypothesizes that this is due to the fact that these regions of you= r brain have more neuronal bandwidth available, allowing them to move aroun= d more information and sift through more potential solutions than your cons= cious centers of thinking.
+Highlight(yellow) - Location 16= 36
+The implication of this line of research is that providing your conscio= us brain time to rest enables your unconscious mind to take a shift sorting= through your most complex professional challenges.
+Highlight(yellow) - Location 16= 38
+Reason #2: Downtime Helps Recharge the Energy Needed to Work Deeply
+Highlight(yellow) - Location 16= 73
+Reason #3: The Work That Evening Downtime Replaces Is Usually Not That = Important
+= --Apple-Mail-8D62F795-8871-4A2A-9F9D-A76E8F44EB84 Content-Type: text/plain; charset=us-ascii Content-Transfer-Encoding: 7bit Thank you, Aditya Shylesh --Apple-Mail-8D62F795-8871-4A2A-9F9D-A76E8F44EB84--

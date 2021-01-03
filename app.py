@@ -51,14 +51,20 @@ def inbound_parse():
     print("Saved last email")
     mail = mailparser.parse_from_string(raw_email)
     print("Attachments", len(mail.attachments))
+    print("Attachments", mail.attachments)
     for attached_file in mail.attachments:
         try:
             raw_payload = attached_file["payload"]
-            payload_bytes = base64.b64decode(raw_payload)
-            html_payload = payload_bytes.decode("utf-8")
+            print(raw_payload)
+            print(attached_file["content_transfer_encoding"])
+            if attached_file["content_transfer_encoding"] == "base64":
+                payload_bytes = base64.b64decode(raw_payload)
+                html_payload = payload_bytes.decode("utf-8")
+            else:
+                html_payload = raw_payload
             highlights = parse_highlights(html_payload)
             print(f"Received and parsed highlights for {highlights['title']}")
-            SyncToNotion(highlights)
+            #SyncToNotion(highlights)
         except Exception as e:
             print(e)
             print("Could not process attached file")
