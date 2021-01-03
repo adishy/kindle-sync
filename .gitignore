@@ -139,3 +139,6 @@ cython_debug/
 
 # File with secrets
 secrets.sh
+
+# Temporary files saved
+tmp/*

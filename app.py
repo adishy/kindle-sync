@@ -14,7 +14,7 @@ except:
     # Python 3+, Travis
     from sendgrid.helpers.inbound.parse import Parse
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, make_response
 from parse_highlights import parse_highlights
 from sync_to_notion import SyncToNotion
 import base64
@@ -23,7 +23,10 @@ import os
 
 app = Flask(__name__)
 config = Config()
-data = "Not yet set"
+
+if not os.path.exists("tmp/"):
+    os.mkdir("tmp")
+    print("Created tmp directory!")
 
 @app.route('/', methods=['GET'])
 def index():
@@ -32,11 +35,13 @@ def index():
 
 @app.route('/last_email', methods=['GET'])
 def last_email_saved():
-    email_path = "last_email_saved.txt"
+    email_path = "tmp/last_email_saved.txt"
     if not os.path.exists(email_path):
         return "No emails were saved!"
     file = open(email_path, "r")
-    return file.read()
+    response = make_response(file.read(), 200)
+    response.mimetype = "text/plain"
+    return response
 
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
@@ -45,18 +50,15 @@ def inbound_parse():
     # Sample processing action
     print("Email!")
     raw_email = parse.get_raw_email()
-    file = open("last_email_saved.txt", "w")
+    file = open("tmp/last_email_saved.txt", "w")
     file.write(raw_email)
     file.close()
     print("Saved last email")
     mail = mailparser.parse_from_string(raw_email)
     print("Attachments", len(mail.attachments))
-    print("Attachments", mail.attachments)
     for attached_file in mail.attachments:
         try:
             raw_payload = attached_file["payload"]
-            print(raw_payload)
-            print(attached_file["content_transfer_encoding"])
             if attached_file["content_transfer_encoding"] == "base64":
                 payload_bytes = base64.b64decode(raw_payload)
                 html_payload = payload_bytes.decode("utf-8")
@@ -64,7 +66,7 @@ def inbound_parse():
                 html_payload = raw_payload
             highlights = parse_highlights(html_payload)
             print(f"Received and parsed highlights for {highlights['title']}")
-            #SyncToNotion(highlights)
+            SyncToNotion(highlights)
         except Exception as e:
             print(e)
             print("Could not process attached file")
