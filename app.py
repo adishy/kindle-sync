@@ -18,6 +18,7 @@ from flask import Flask, request, render_template, make_response, jsonify
 from parse_highlights import parse_highlights
 from sync_to_notion import SyncToNotion
 from pymongo import MongoClient
+from bson.json_util import dumps, loads 
 from os import environ as env
 import base64
 import mailparser
@@ -52,11 +53,14 @@ def index():
 
 @app.route('/last_email', methods=['GET'])
 def last_email_saved():
-    try:
-        last_email = db_emails_collection.find({}).sort({_id:-1}).limit(1)
-        return jsonify(last_email), 200
-    except Exception as e:
-        return jsonify({ "error": e }), 500
+    number_of_emails = request.args.get("limit")
+    if number_of_emails is None:
+        number_of_emails = 1
+    last_email = db_emails_collection.find({}).sort("created_timestamp").limit(int(number_of_emails))
+    last_email = dumps(list(last_email))
+    response = make_response(last_email, 200)
+    response.mimetype = "application/json"
+    return response
 
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
