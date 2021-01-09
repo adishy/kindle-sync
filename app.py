@@ -14,12 +14,29 @@ except:
     # Python 3+, Travis
     from sendgrid.helpers.inbound.parse import Parse
 
-from flask import Flask, request, render_template, make_response
+from flask import Flask, request, render_template, make_response, jsonify
 from parse_highlights import parse_highlights
 from sync_to_notion import SyncToNotion
+from pymongo import MongoClient
+from os import environ as env
 import base64
 import mailparser
 import os
+import datetime
+
+try:
+    url = env["PI_TWO_MONGO_URL"]
+    username = env["PI_TWO_MONGO_USER"]
+    password = env["PI_TWO_MONGO_PASSWORD"]
+    auth_source = "admin"
+    mongo_uri = f"mongodb://{username}:{password}@{url}/?authSource={auth_source}"
+    client = MongoClient(mongo_uri)
+    db = client[env["PI_TWO_MONGO_DB_NAME"]]
+    db_highlights_collection = db[env["PI_TWO_MONGO_HIGHLIGHTS_COLLECTION"]]
+    db_emails_collection = db[env["PI_TWO_MONGO_EMAILS_COLLECTION"]]
+except Exception as e:
+    print(e)
+    print("Could not instantiate PyMongo client")
 
 app = Flask(__name__)
 config = Config()
@@ -35,25 +52,31 @@ def index():
 
 @app.route('/last_email', methods=['GET'])
 def last_email_saved():
-    email_path = "tmp/last_email_saved.txt"
-    if not os.path.exists(email_path):
-        return "No emails were saved!"
-    file = open(email_path, "r")
-    response = make_response(file.read(), 200)
-    response.mimetype = "text/plain"
-    return response
+    try:
+        last_email = db_emails_collection.find({}).sort({_id:-1}).limit(1)
+        return jsonify(last_email), 200
+    except Exception as e:
+        return jsonify({ "error": e }), 500
 
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
     """Process POST from Inbound Parse and print received data."""
     parse = Parse(config, request)
-    # Sample processing action
     print("Email!")
     raw_email = parse.get_raw_email()
-    file = open("tmp/last_email_saved.txt", "w")
-    file.write(raw_email)
-    file.close()
-    print("Saved last email")
+    
+    try:
+        email = \
+        {
+            "raw_email": raw_email,
+            "created_timestamp": datetime.datetime.now()
+        }
+        inserted_email = db_emails_collection.insert_one(email).inserted_id
+        print("Saved last email in database!", inserted_email)
+    except Exception as e:
+        print(e)
+        print("Could not save last email to database")
+        
     mail = mailparser.parse_from_string(raw_email)
     print("Attachments", len(mail.attachments))
     for attached_file in mail.attachments:
@@ -66,6 +89,14 @@ def inbound_parse():
                 html_payload = raw_payload
             highlights = parse_highlights(html_payload)
             print(f"Received and parsed highlights for {highlights['title']}")
+
+            try:
+                inserted_highlights = db_highlights_collection.insert_one(highlights).inserted_id
+                print("Saved highlights to database", inserted_highlights)
+            except Exception as e:
+                print(e)
+                print("Could not save highlights to database")
+
             SyncToNotion(highlights)
         except Exception as e:
             print(e)
