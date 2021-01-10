@@ -20,6 +20,7 @@ from sync_to_notion import SyncToNotion
 from pymongo import MongoClient
 from bson.json_util import dumps, loads 
 from os import environ as env
+import random
 import base64
 import mailparser
 import os
@@ -50,6 +51,31 @@ if not os.path.exists("tmp/"):
 def index():
     """Show index page to confirm that server is running."""
     return render_template('index.html')
+
+
+@app.route("/random_highlight", methods=['GET'])
+def random_highlight():
+   book_titles = db_highlights_collection.find({}, { "_id": 0, "title": 1 })
+   book_titles = [ book_title["title"] for book_title in book_titles ]
+   if len(book_titles) == 0:
+       return jsonify({ "status": "500", "error": "No books or articles have been highlighted" }), 500
+   title = random.choice(book_titles)
+   sections = db_highlights_collection.find_one({ "title": title }, { "_id": 0, "sections": 1 })["sections"]
+   if len(sections) == 0:
+       return jsonify({ "status": "500", "error": "No sections in book", "title": title }), 500
+   section = random.choice(sections)
+   if len(section["highlights"]) == 0:
+       return jsonify({ "status": "500", "error": "No highlights in current section", "title": title, "section": section }), 500
+   highlight = random.choice(section["highlights"]) 
+   response = make_response(dumps(
+       { "title": title,
+         "highlight": highlight["text"],
+         "location": highlight["heading"],
+         "section": section["section_title"] 
+       }), 200)
+   response.mimetype = "application/json"
+   return response
+
 
 @app.route('/last_email', methods=['GET'])
 def last_email_saved():
@@ -93,7 +119,6 @@ def inbound_parse():
                 html_payload = raw_payload
             highlights = parse_highlights(html_payload)
             print(f"Received and parsed highlights for {highlights['title']}")
-
             try:
                 inserted_highlights = db_highlights_collection.insert_one(highlights).inserted_id
                 print("Saved highlights to database", inserted_highlights)
