@@ -88,6 +88,7 @@ def last_email_saved():
     response.mimetype = "application/json"
     return response
 
+
 @app.route(config.endpoint, methods=['POST'])
 def inbound_parse():
     """Process POST from Inbound Parse and print received data."""

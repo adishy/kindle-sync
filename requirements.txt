@@ -8,3 +8,4 @@ mail-parser
 beautifulsoup4
 notion
 pymongo==3.4.0
+gunicorn
