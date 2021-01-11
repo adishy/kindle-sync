@@ -17,6 +17,7 @@ except:
 from flask import Flask, request, render_template, make_response, jsonify
 from parse_highlights import parse_highlights
 from sync_to_notion import SyncToNotion
+from gunicorn_server import GunicornServer 
 from pymongo import MongoClient
 from bson.json_util import dumps, loads 
 from os import environ as env
@@ -140,4 +141,12 @@ if __name__ == '__main__':
     print(port)
     if port != config.port:
         config.debug = False
-    app.run(host='0.0.0.0', debug=config.debug_mode, port=port)
+    if config.debug:
+        app.run(host="0.0.0.0", debug=True, port=port)
+    else:
+        options = \
+        {
+            "bind": f"0.0.0.0:{port}",
+            "workers": 3,
+        }
+        GunicornServer(app, options).run()
