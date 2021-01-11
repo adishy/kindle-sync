@@ -6,6 +6,8 @@ import threading
 class SyncToNotion:
     def __init__(self, highlights):
         self.highlights = highlights
+        self.sync()
+        return
         thread = threading.Thread(target=self.sync, args=())
         thread.daemon = True
         thread.start()
@@ -15,8 +17,12 @@ class SyncToNotion:
         print("Starting highlights sync")
         client = NotionClient(token_v2 = env['TOKEN_V2'])
         page = client.get_block(env["PAGE"])
+        new_page_title = f"{highlights['title']} - {highlights['authors']}"
         try:
-            new_notebook_page = page.children.add_new(PageBlock, title=f"{highlights['title']} - {highlights['authors']}")
+            for child in page.children:
+                if child.title == new_page_title:
+                    child.remove()
+            new_notebook_page = page.children.add_new(PageBlock, title=new_page_title)
             saved_section_count = 0
             saved_highlight_count = 0
             for section in highlights["sections"]:
