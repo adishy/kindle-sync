@@ -6,8 +6,6 @@ import threading
 class SyncToNotion:
     def __init__(self, highlights):
         self.highlights = highlights
-        self.sync()
-        return
         thread = threading.Thread(target=self.sync, args=())
         thread.daemon = True
         thread.start()

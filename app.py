@@ -122,6 +122,7 @@ def inbound_parse():
             highlights = parse_highlights(html_payload)
             print(f"Received and parsed highlights for {highlights['title']}")
             try:
+                db_highlights_collection.remove({ "title": highlights["title"], "authors": highlights["authors"] })
                 inserted_highlights = db_highlights_collection.insert_one(highlights).inserted_id
                 print("Saved highlights to database", inserted_highlights)
             except Exception as e:
